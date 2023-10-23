@@ -1,0 +1,129 @@
+
+<mat-drawer-container class="example-container">
+
+    <!-- sid - nav - start -->
+
+    <mat-drawer mode="side" [opened]="sideBarOpne" #drawer >
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <!-- sid - nav - emd -->
+
+    <mat-drawer-content>
+
+      <!-- Nav bar start -->
+        <app-header (toggleSidebarFormMe)="sideBarToggler()"> </app-header>
+      <!-- Nav bar end -->
+
+        <div class="example-boundary">
+            <div class="row">
+                <div class="col-lg-2 p-0">
+                    <form >
+                        <div class="main-box ">
+                            <div class="example-box1 mb-2 mt-2" >
+                                <input type="text" class="form-control" placeholder="Name" *ngIf="id1 ? 'hideme':''">
+                                <div class="form-row"  cdkDragBoundary=".example-boundary" cdkDrag >
+                                    <div class="form-group" (click)="hideme1()">
+                                        <input type="text" class="form-control" placeholder="Name" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2" >
+                                <div class="form-group" *ngIf="id2 ? 'hideme':''">
+                                    <input type="email" class="form-control" placeholder="Email">
+                                </div>
+                                <div class="form-row"  cdkDragBoundary=".example-boundary" cdkDrag>
+                                    <div class="form-group" (click)="hideme2()">
+                                    <input type="email" class="form-control" placeholder="Email" >
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2" >
+                                <input type="password" class="form-control" placeholder="Password" *ngIf="id3 ? 'hideme':''">
+                                <div class="form-row"  cdkDragBoundary=".example-boundary" cdkDrag>
+                                    <div class="form-group"  (click)="hideme3()">
+                                    <input type="password" class="form-control"  placeholder="Password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2" >
+                                <input type="number" class="form-control" placeholder="Number" *ngIf="id4 ? 'hideme':''">
+                                <div class="form-row"  cdkDragBoundary=".example-boundary" cdkDrag>
+                                    <div class="form-group"  (click)="hideme4()">
+                                        <input type="number" class="form-control"  placeholder="Number" value="number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2" >
+                                <input type="date" class="form-control" placeholder="Date" *ngIf="id5 ? 'hideme':''">
+                                <div class="form-row"  cdkDragBoundary=".example-boundary" cdkDrag>
+                                    <div class="form-group"  (click)="hideme5()">
+                                        <input type="date" class="form-control"  placeholder="date">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2">
+                                <div class="form-group" *ngIf="id6 ? 'hideme':''">
+                                    <select id="inputState" class="form-control">
+                                    <option selected>Select Option Set ...</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    </select>
+                                </div>
+                                <div class="input-box" cdkDragBoundary=".example-boundary" cdkDrag>
+                                    <div class="form-group"  (click)="hideme6()">
+                                        <select id="inputState" class="form-control">
+                                        <option selected>Select Option Set ...</option>
+                                        <option>1</option>
+                                        <option>2</option>
+                                        <option>3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2">
+                                <div class="input-box"  (click)="hideme7()"> 
+                                    <label class="form-check-label mrg" for="defaultCheck1"> Checkbox </label>
+                                    <input class="form-check-input mrg" type="checkbox" value="" id="defaultCheck1" cdkDragBoundary=".example-boundary" cdkDrag>
+                                </div>
+                                <div class="input-box" *ngIf="id7 ? 'hideme':''"> 
+                                    <input class="form-check-input mrg" type="checkbox" value="" id="defaultCheck1" cdkDragBoundary=".example-boundary" cdkDrag>
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2" cdkDragBoundary=".example-boundary" cdkDrag>
+                                <div class="input-box" cdkDragBoundary=".example-boundary" cdkDrag  (click)="hideme8()"> 
+                                    <label class="form-check-label mrg" for="defaultCheck1"> Radio </label>
+                                    <input class="form-check-input mrg" type="radio" value="" name="exampleRadios">
+                                </div>
+                                <div class="input-box" cdkDragBoundary=".example-boundary" cdkDrag *ngIf="id8 ? 'hideme':''"> 
+                                    <label class="form-check-label mrg" for="defaultCheck1"> Radio </label>
+                                    <input class="form-check-input mrg" type="radio" value="" name="exampleRadios">
+                                </div>
+                            </div>
+                            <div class="example-box1 mb-2 mt-2" >
+                                <div class="form-group" *ngIf="id9 ? 'hideme':''">
+                                    <input type="submit" class="form-control"  placeholder="Submit" value="Submit">
+                                </div>
+                                <div class="form-row"  cdkDragBoundary=".example-boundary" cdkDrag>
+                                    <div class="form-group"  (click)="hideme9()">
+                                        <input type="submit" class="form-control"  placeholder="Submit" value="Submit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-10 p-0">
+                    <div class="main-box" >
+                        <h1 class="text-danger text-center"> <b>Create Form </b></h1>
+                        <!-- <div class="example-box1" cdkDragBoundary=".example-boundary" cdkDrag>
+                            I can only be dragged within the dotted container
+                        </div> -->
+            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

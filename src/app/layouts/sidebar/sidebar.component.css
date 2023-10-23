@@ -1,0 +1,49 @@
+::ng-deep .mdc-button:hover {
+  min-width: 0px;
+}
+
+.mdc-button {
+  min-width: 0px;
+  padding: 0px;
+  width: 20px;
+  height: 18px;
+  margin-top: 10px;
+}
+
+::ng-deep .mdc-list-item__primary-text:hover {
+  color: #5fce9f !important;
+  transition: color 0.8s;
+}
+
+.list-bar:hover {
+  transition: background 1s;
+  background: #6c757d;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.list-bar {
+  margin-top: 5px;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  color: #fefefe !important;
+}
+
+mat-icon {
+  height: 20px;
+  width: 35px;
+}
+
+.active {
+  background-color: #6c757d;
+  .mdc-list-item__primary-text {
+    color: #5fce9f !important;
+  }
+}
+a {
+    text-decoration: none;
+}
+.mat-mdc-button, .mat-mdc-outlined-button {
+  --mat-mdc-button-persistent-ripple-color: transparent;
+}

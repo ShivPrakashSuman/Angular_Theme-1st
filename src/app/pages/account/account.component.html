@@ -1,0 +1,75 @@
+<mat-drawer-container class="example-container">
+
+    <!-- sid - nav - start -->
+
+    <mat-drawer mode="side" [opened]="sideBarOpne" #drawer>
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <!-- sid - nav - emd -->
+
+    <mat-drawer-content>
+
+        <!-- Nav bar start -->
+        <app-header (toggleSidebarFormMe)="sideBarToggler()"> </app-header>
+        <!-- Nav bar end -->
+
+        <div class="p-5">
+            <div class="row mb-3">
+                <div class="col-8">
+                    <h5 class="page-title">Account</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6  px-3">
+                    <mat-card class="example-card">
+                        <img  mat-card-image onerror="src='../../../assets/1920x400/img2.jpg'"
+                        src="../../../assets/R.jpeg" alt="background image">
+                        <samp class="image-box"><img src="../../../assets/image/sidhu.png" class=" img1"></samp>
+                        <span class="text-center">
+                            <h3>Shiv Saini</h3>
+                            <p> shiv7421@yopmail.com </p>
+                        </span>
+                        <mat-card-content>
+                            <p class="px-2">
+                                The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                                A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+                                bred for hunting.
+                            </p>
+                        </mat-card-content>
+                      </mat-card>
+                </div>
+                <div class="col-lg-6">
+                    <mat-card class="example-card p-4">
+                    <form [formGroup]="registerForm" (ngSubmit)="submit()"> 
+                        <mat-form-field appearance="outline">
+                            <mat-label>Name</mat-label>
+                            <input type="text" matInput placeholder="Placeholder" formControlName="name">
+                            <mat-icon matSuffix>how_to_reg</mat-icon>
+                            <mat-hint>Dev</mat-hint>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Enter your email</mat-label>
+                            <input type="email" matInput placeholder="pat@example.com" formControlName="email">
+                            <mat-icon matSuffix>email</mat-icon>
+                            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="outline">
+                            <mat-label>Enter your password</mat-label>
+                            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password.." formControlName="password">
+                            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                              [attr.aria-pressed]="hide">
+                              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </button>
+                            <mat-hint>*****</mat-hint>
+                        </mat-form-field>
+                        <div class="text-end">
+                            <button mat-raised-button name="submit">Save<mat-icon>input</mat-icon></button>
+                        </div>
+                    </form>
+                    </mat-card>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

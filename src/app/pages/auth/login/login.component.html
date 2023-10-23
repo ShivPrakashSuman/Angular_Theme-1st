@@ -1,0 +1,26 @@
+<div class="mane-box">
+    <mat-card class="example-card p-4 shadow">
+        <h2 class="text"><strong> Login </strong></h2>
+        <form [formGroup]="loginForm" (ngSubmit)="submit()"> 
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your email</mat-label>
+                <input type="email" matInput placeholder="pat@example.com" formControlName="email">
+                <mat-icon matSuffix>email</mat-icon>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline">
+                <mat-label>Enter your password</mat-label>
+                <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password.." formControlName="password">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                  [attr.aria-pressed]="hide">
+                  <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+                <mat-hint>*****</mat-hint>
+            </mat-form-field>
+            <div class="text-center">
+                <button mat-stroked-button color="primary" class="mx-3" routerLink="/register">Register	<mat-icon>first_page</mat-icon></button>
+                <button mat-raised-button name="submit">Submit<mat-icon>input</mat-icon></button>
+              </div>
+        </form>
+    </mat-card>
+</div>

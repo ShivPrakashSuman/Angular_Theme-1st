@@ -1,0 +1,58 @@
+<mat-drawer-container class="example-container">
+
+    <!-- sid - nav - start -->
+
+    <mat-drawer mode="side" [opened]="sideBarOpne" #drawer>
+        <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <!-- sid - nav - emd -->
+
+    <mat-drawer-content class="main-panel">
+
+        <!-- Nav bar start -->
+        <app-header (toggleSidebarFormMe)="sideBarToggler()"> </app-header>
+        <!-- Nav bar end -->
+        <div class="p-5">
+            <div class="row mb-3">
+                <div class="col-8">
+                    <h5 class="page-title">All Pexels Image</h5>
+                </div>
+                <div class="col-4 text-end breadcrumb-list">
+                    <form>
+                        <div class="int-search-btn">
+                            <div class="input-group">
+                            <input type="search" class="form-control" placeholder="Search Here..." [(ngModel)]="search" name="search">
+                            <div class="input-group-append">
+                                <button  type="button" (click)="getData(1)"><mat-icon>search</mat-icon></button>
+                            </div>
+                            </div>
+                        </div> 
+                    </form>
+                </div>
+            </div>
+            <div
+                infiniteScroll
+                [infiniteScrollDistance]="distance"
+                [infiniteScrollThrottle]="throttle"
+                [infiniteScrollContainer]="selector"
+                [fromRoot]="true"
+                (scrolled)="onScroll()"
+                >
+                <mat-card class="">
+                    <mat-card-content class="p-4">
+                        <div class="row">
+                            <div class="col-lg-3 mb-4" *ngFor="let row of data, let i = index">
+                                <div class="pexels-grid">
+                                    <div class="pexels-item p-4 rounded-3">
+                                        <a href="{{ row }}" download><img src="{{ row }}" width="300"class="rounded-3"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

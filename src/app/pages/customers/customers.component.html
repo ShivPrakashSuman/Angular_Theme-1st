@@ -1,0 +1,60 @@
+<mat-drawer-container class="example-container">
+
+  <!-- sid - nav - start -->
+
+  <mat-drawer mode="side" [opened]="sideBarOpne" #drawer class="sidbar">
+    <app-sidebar></app-sidebar>
+  </mat-drawer>
+
+  <!-- sid - nav - emd -->
+
+  <mat-drawer-content>
+
+    <!-- Nav bar start -->
+    <app-header (toggleSidebarFormMe)="sideBarToggler()"> </app-header>
+    <!-- Nav bar end -->
+    <ngx-skeleton-loader [theme]="{height: '20px', 'border-radius': '10px'}"></ngx-skeleton-loader>
+    <div class="p-5">
+      <div class="row mb-3">
+        <div class="col-8">
+          <h5 class="page-title">All Customers</h5>
+        </div>
+        <div class="col-4 text-end">
+          <button mat-raised-button routerLink="/customers/create" >New Customer<mat-icon>add</mat-icon></button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="card p-3 shadow">
+          <div class="card-body">
+            <table class="table hover">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>First name</th>
+                  <th>Last name</th>
+                  <th>Email </th>
+                  <th>Mobile</th>
+                  <th>Date of Birth</th>
+                  <th>Gender</th>
+                  <th>Address</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let post of data">
+                  <td>{{ post.id }}</td>
+                  <td>{{ post.first_name }}</td>
+                  <td>{{ post.last_name }}</td>
+                  <td>{{ post.email }}</td>
+                  <td>{{ post.mobile }}</td>
+                  <td>{{ post.date_of_birth }}</td>
+                  <td>{{ post.gender }}</td>
+                  <td>{{ post.address }}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>

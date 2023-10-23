@@ -1,0 +1,28 @@
+
+.mat-mdc-raised-button:not(:disabled) {
+    color: #1a2e57;
+    background: #5fce9f;
+}
+.mat-mdc-raised-button:not(:disabled):hover {
+    background: #1a2e57;
+    color: #5fce9f;
+    transition: color .4s;
+    transition: background .5s;
+}
+.img1{
+    border-radius: 50%;
+    width: 150px;
+    border: 4px solid white;
+}
+.img1:hover {
+    border: 4px solid #5fce9f;
+    transition: 0.8s all;
+}
+.image-box{
+    text-align: center;
+    margin-top: -90px;
+    z-index: 1;
+}
+mat-form-field{
+    margin-top: 35px;
+}

@@ -1,0 +1,128 @@
+
+<mat-drawer-container class="example-container">
+
+    <!-- sid - nav - start -->
+
+    <mat-drawer mode="side" [opened]="sideBarOpne" #drawer >
+      <app-sidebar></app-sidebar>
+    </mat-drawer>
+
+    <!-- sid - nav - emd -->
+
+    <mat-drawer-content >
+
+      <!-- Nav bar start -->
+      <app-header (toggleSidebarFormMe)="sideBarToggler()"> </app-header>
+      <!-- Nav bar end -->
+      <div class="p-5">
+        <div class="row ">
+          <div class="col-md-3">
+            <div class="shadow p-4 rounded-3">
+              <div class="row">
+                <div class="col-md-8">
+                  <p class="text-muted text-uppercase mb-0 lh-1"><b> budget </b></p>
+                  <p class="fs-2 mb-2"><b> $24K </b></p>
+                  <p class="text-muted mb-0" style="font-size: 14px;"><span class="text-danger fs-5"><i class="fa fa-arrow-down"></i>12 % </span> Since last month</p>
+                </div>
+                <div class="col-md-4"> 
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-danger">
+                    <mat-icon><i class="bx bx-barcode"></i></mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="shadow p-4 rounded-3">
+              <div class="row">
+                <div class="col-md-8">
+                  <p class="text-muted text-uppercase mb-0 lh-1"><b> Total Customers </b></p>
+                  <p class="fs-2 mb-2"><b> 1,6K </b></p>
+                  <p class="text-muted mb-0" style="font-size: 14px;"><span class="text-success fs-5"><i class="fa fa-arrow-up"></i>16 % </span> Since last month</p>
+                </div>
+                <div class="col-md-4"> 
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-success">
+                    <mat-icon><i class="bx bx-user"></i></mat-icon>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="shadow p-4 rounded-3" style="height: 100%;">  
+              <div class="row">
+                <div class="col-md-8">
+                  <p class="text-muted text-uppercase mb-0 lh-1"><b> Tasks Progress </b></p>
+                  <p class="fs-2 mb-2"><b> 75.5% </b></p>
+                </div>
+                <div class="col-md-4"> 
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-warning">
+                    <mat-icon><i class="bx bx-bar-chart-square"></i></mat-icon>
+                  </button>
+                </div>
+                <p class="mt-3 mb-0 "><mat-progress-bar mode="determinate" class="bg-warning" value="75"></mat-progress-bar></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="shadow p-4 rounded-3" style="height: 100%;">
+              <div class="row">
+                <div class="col-md-8">
+                  <p class="text-muted text-uppercase mb-0 lh-1"><b> Total Profit </b></p>
+                  <p class="fs-2 mb-2"><b> $23K </b></p>
+                </div>
+                <div class="col-md-4"> 
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-primary">
+                    <mat-icon><i class="bx bx-dollar"></i></mat-icon>
+                  </button>
+                </div>
+                <p class="mt-3 mb-0" ><mat-progress-bar mode="determinate" value="65"></mat-progress-bar></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="mt-5">
+              <div class="shadow rounded-3">
+                <p class="fs-5 p-4 mb-0"><b> Latest Sales</b> 
+                  <span style="float: right;" class="text-primary">
+                    <span class="mx-2 fs-6 fw-normal">Last 7 day</span><button mat-button [matMenuTriggerFor]="menu" class="fs-6"><mat-icon>unfold_more</mat-icon></button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>Item 1</button>
+                      <button mat-menu-item>Item 2 </button>
+                    </mat-menu> 
+                  </span>
+                </p>
+                <hr class="mb-0">
+                <div>
+                  <div>
+                    <div class="p-4">
+                      <div>
+                        <canvas id="myChart" ></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4" style="height: 100%;">
+            <div class="mt-5">
+              <div class="shadow rounded-3">
+                <div>
+                  <p class="fs-5 p-4"><b> Traffic by Device </b> </p>
+                  <hr class="mb-0">
+                </div>
+                <div class="pt-4 pb-4 px-2">
+                  <div>
+                    <canvas id="cricle"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-drawer-content>
+</mat-drawer-container>

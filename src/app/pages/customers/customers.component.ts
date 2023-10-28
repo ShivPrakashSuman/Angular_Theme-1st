@@ -12,11 +12,18 @@ export class CustomersComponent {
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
 
+  contentLoaded:boolean = false;
   sideBarOpne = true;
   data:any = [];
   constructor(private apiService: ApiService, private alertService: AlertService){ }
   ngOnInit(): void {
-    this.getData();
+    setTimeout(()=>{
+      this.getData();
+    }, 1000);
+
+    setTimeout(() => {
+      this.contentLoaded = true;
+    }, 2000);
   }
   getData(){
     let url = `/customer`;

@@ -12,9 +12,11 @@ import { ApiService } from 'src/app/_services/api.service';
 export class PexelsComponent {
   sideBarOpne = true;
   headers:any;
+  contentLoaded:boolean = false;
   
   search:any='';
   data: Comment[] | any[] = [];
+  demoCountArr: Comment[] | any[] = [0,1,2,3,4,5,6,7];
   page:any= 1;
   per_page:any=12;
   distance = 2;
@@ -22,7 +24,13 @@ export class PexelsComponent {
 
   constructor(private fb:FormBuilder, private apiService: ApiService, private alertService: AlertService){ }
   ngOnInit(): void {
-    this.getData(this.page);
+    setTimeout(()=>{
+      this.getData(this.page);
+    }, 1000);
+
+    setTimeout(() => {
+      this.contentLoaded = true;
+    }, 2000);
   }
   getData(page:any){
     if(this.search){

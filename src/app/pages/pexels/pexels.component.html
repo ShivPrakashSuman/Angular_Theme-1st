@@ -41,6 +41,13 @@
                 >
                 <mat-card class="">
                     <mat-card-content class="p-4">
+                        <div *ngIf="!contentLoaded">
+                            <div class="row">
+                                <div class="col-lg-3 mb-4" *ngFor='let in of demoCountArr;'>
+                                    <ngx-skeleton-loader [theme]="{height: '100px', 'border-radius': '10px'}"></ngx-skeleton-loader>
+                                </div>
+                            </div>
+                        </div>
                         <div class="row">
                             <div class="col-lg-3 mb-4" *ngFor="let row of data, let i = index">
                                 <div class="pexels-grid">

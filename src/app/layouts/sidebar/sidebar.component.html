@@ -46,8 +46,12 @@
             </mat-list-item>
         </a>
         <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.is-active]="getActive('setting')"><mat-icon>settings</mat-icon> <span class="mx-2">Setting</span></mat-list-item>
-        <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.is-active]="getActive('login')"><mat-icon>lock</mat-icon><span class="mx-2">Login</span></mat-list-item>
-        <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.is-active]="getActive('register')"><mat-icon>person_add</mat-icon><span class="mx-2">Register</span></mat-list-item>
+        <a routerLink="/login">
+            <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.is-active]="getActive('login')"><mat-icon>lock</mat-icon><span class="mx-2">Login</span></mat-list-item>
+        </a>
+        <a routerLink="/register">
+            <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.is-active]="getActive('register')"><mat-icon>person_add</mat-icon><span class="mx-2">Register</span></mat-list-item>
+        </a>
         <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.is-active]="getActive('error')"><mat-icon>cancel</mat-icon><span class="mx-2">Error</span></mat-list-item>
     </mat-list>
 </div>

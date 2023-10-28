@@ -13,7 +13,7 @@
     <!-- Nav bar start -->
     <app-header (toggleSidebarFormMe)="sideBarToggler()"> </app-header>
     <!-- Nav bar end -->
-    <ngx-skeleton-loader [theme]="{height: '20px', 'border-radius': '10px'}"></ngx-skeleton-loader>
+    <ngx-skeleton-loader *ngIf="!data" [theme]="{height: '20px', 'border-radius': '10px'}"></ngx-skeleton-loader>
     <div class="p-5">
       <div class="row mb-3">
         <div class="col-8">
@@ -40,6 +40,12 @@
                 </tr>
               </thead>
               <tbody>
+                <tr *ngIf="!contentLoaded">
+                  <td colspan="8"><ngx-skeleton-loader [theme]="{height: '20px', 'border-radius': '1px'}"></ngx-skeleton-loader></td>
+                </tr>
+                <tr *ngIf="!contentLoaded">
+                  <td colspan="8"><ngx-skeleton-loader [theme]="{height: '20px', 'border-radius': '1px'}"></ngx-skeleton-loader></td>
+                </tr>
                 <tr *ngFor="let post of data">
                   <td>{{ post.id }}</td>
                   <td>{{ post.first_name }}</td>

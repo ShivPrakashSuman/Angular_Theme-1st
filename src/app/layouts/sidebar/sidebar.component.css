@@ -47,3 +47,27 @@ a {
 .mat-mdc-button, .mat-mdc-outlined-button {
   --mat-mdc-button-persistent-ripple-color: transparent;
 }
+.collapseHref a{
+  text-align: left;
+}
+.collapseHref a:hover{
+  background: #eaeaea;
+
+}
+.mat-expansion-panel-header {
+  padding: 0 15px;
+}
+::ng-deep .mat-expansion-panel-header-title:hover {
+  color: #5fce9f !important;
+  transition: color 0.8s;
+}
+.mat-expansion-panel{
+  background: transparent;
+  color: white;
+}
+.mat-expansion-panel-header-title{
+  color: white;
+}
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+  box-shadow: none;
+}

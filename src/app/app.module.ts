@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { NgToastModule } from 'ng-angular-popup';
 import { InfiniteScrollModule } from "ngx-infinite-scroll";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // material ---
 import { MatButtonModule } from '@angular/material/button';
@@ -67,7 +68,8 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     HttpClientModule,
     NgToastModule,
     InfiniteScrollModule,
-    
+    NgbModule,
+
     // material ---
     MatButtonModule,
     DragDropModule,

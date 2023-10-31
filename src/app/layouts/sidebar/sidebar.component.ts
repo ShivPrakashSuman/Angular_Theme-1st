@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class SidebarComponent {
   getUrl: any;
   panelOpenState = false;
-
+  public gfg = true; 
   constructor(private router: Router) {
 
   }

@@ -9,3 +9,8 @@
     transition: color .4s;
     transition: background .5s;
 }
+
+.heading-text {
+    border-bottom: 2px solid #5fce9f;
+    font-size: 18px;
+}

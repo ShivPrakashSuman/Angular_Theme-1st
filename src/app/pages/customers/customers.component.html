@@ -20,44 +20,78 @@
           <h5 class="page-title">All Customers</h5>
         </div>
         <div class="col-4 text-end">
-          <button mat-raised-button routerLink="/customers/create" >New Customer<mat-icon>add</mat-icon></button>
+          <button mat-raised-button routerLink="/customers/create">New Customer<mat-icon>add</mat-icon></button>
         </div>
       </div>
       <div class="row">
-        <div class="card p-3 shadow">
-          <div class="card-body">
-            <table class="table hover">
-              <thead>
-                <tr>
-                  <th>ID</th>
-                  <th>First name</th>
-                  <th>Last name</th>
-                  <th>Email </th>
-                  <th>Mobile</th>
-                  <th>Date of Birth</th>
-                  <th>Gender</th>
-                  <th>Address</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngIf="!contentLoaded">
-                  <td colspan="8"><ngx-skeleton-loader [theme]="{height: '20px', 'border-radius': '1px'}"></ngx-skeleton-loader></td>
-                </tr>
-                <tr *ngIf="!contentLoaded">
-                  <td colspan="8"><ngx-skeleton-loader [theme]="{height: '20px', 'border-radius': '1px'}"></ngx-skeleton-loader></td>
-                </tr>
-                <tr *ngFor="let post of data">
-                  <td>{{ post.id }}</td>
-                  <td>{{ post.first_name }}</td>
-                  <td>{{ post.last_name }}</td>
-                  <td>{{ post.email }}</td>
-                  <td>{{ post.mobile }}</td>
-                  <td>{{ post.date_of_birth }}</td>
-                  <td>{{ post.gender }}</td>
-                  <td>{{ post.address }}</td>
-                </tr>
-              </tbody>
-            </table>
+        <div class="col-xl-3">
+          <div class="p-2 shadow rounded-3 card">
+            <div class="p-4">
+              <span class="heading-text pb-2 ">Calendar</span>
+              <div class="int-blog-category-mini mt-3">
+                <mat-card class="demo-inline-calendar-card mb-3">
+                  <mat-calendar [(selected)]="selected"></mat-calendar>
+                </mat-card>
+                <p>Selected date: {{selected}}</p>  
+              </div>
+              <span class="heading-text pb-2 my-3">Date Time Pickr Range</span>
+              <div class="int-blog-category-mini mt-4">
+                <mat-form-field class="example-form-field">
+                  <mat-label>Second campaign</mat-label>
+                  <mat-date-range-input
+                    [formGroup]="campaignTwo"
+                    [rangePicker]="campaignTwoPicker"
+                    [comparisonStart]="campaignOne.value.start"
+                    [comparisonEnd]="campaignOne.value.end">
+                    <input matStartDate placeholder="Start date" formControlName="start">
+                    <input matEndDate placeholder="End date" formControlName="end">
+                  </mat-date-range-input>
+                  <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+                  <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+                  <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-9">
+          <div class="card p-3 shadow">
+            <div class="card-body">
+              <table class="table hover">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                    <th>Email </th>
+                    <th>Mobile</th>
+                    <th>Date of Birth</th>
+                    <th>Gender</th>
+                    <th>Address</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="!contentLoaded">
+                    <td colspan="8"><ngx-skeleton-loader
+                        [theme]="{height: '20px', 'border-radius': '1px'}"></ngx-skeleton-loader></td>
+                  </tr>
+                  <tr *ngIf="!contentLoaded">
+                    <td colspan="8"><ngx-skeleton-loader
+                        [theme]="{height: '20px', 'border-radius': '1px'}"></ngx-skeleton-loader></td>
+                  </tr>
+                  <tr *ngFor="let post of data">
+                    <td>{{ post.id }}</td>
+                    <td>{{ post.first_name }}</td>
+                    <td>{{ post.last_name }}</td>
+                    <td>{{ post.email }}</td>
+                    <td>{{ post.mobile }}</td>
+                    <td>{{ post.date_of_birth }}</td>
+                    <td>{{ post.gender }}</td>
+                    <td>{{ post.address }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

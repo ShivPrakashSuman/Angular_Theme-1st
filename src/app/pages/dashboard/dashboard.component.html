@@ -25,7 +25,7 @@
                   <p class="text-muted mb-0" style="font-size: 14px;"><span class="text-danger fs-5"><i class="fa fa-arrow-down"></i>12 % </span> Since last month</p>
                 </div>
                 <div class="col-md-4"> 
-                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-danger">
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-danger" popoverTitle="BUDGET" placement="bottom" ngbPopover="Angular ng bootstrap">
                     <mat-icon><i class="bx bx-barcode"></i></mat-icon>
                   </button>
                 </div>
@@ -41,7 +41,7 @@
                   <p class="text-muted mb-0" style="font-size: 14px;"><span class="text-success fs-5"><i class="fa fa-arrow-up"></i>16 % </span> Since last month</p>
                 </div>
                 <div class="col-md-4"> 
-                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-success">
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-success"  placement="right" popoverTitle="Total Customers" ngbPopover="Angular ng bootstrap">
                     <mat-icon><i class="bx bx-user"></i></mat-icon>
                   </button>
                 </div>
@@ -56,7 +56,7 @@
                   <p class="fs-2 mb-2"><b> 75.5% </b></p>
                 </div>
                 <div class="col-md-4"> 
-                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-warning">
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-warning"  placement="left" popoverTitle=" Tasks Progress" ngbPopover="Angular ng bootstrap">
                     <mat-icon><i class="bx bx-bar-chart-square"></i></mat-icon>
                   </button>
                 </div>
@@ -72,7 +72,7 @@
                   <p class="fs-2 mb-2"><b> $23K </b></p>
                 </div>
                 <div class="col-md-4"> 
-                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-primary">
+                  <button mat-fab color="warn" aria-label="Example icon button with a home icon" class="bg-primary" popoverTitle="Total Profit" ngbPopover="Angular ng bootstrap">
                     <mat-icon><i class="bx bx-dollar"></i></mat-icon>
                   </button>
                 </div>
@@ -106,7 +106,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>         
           <div class="col-md-4" style="height: 100%;">
             <div class="mt-5">
               <div class="shadow rounded-3">
@@ -122,6 +122,48 @@
               </div>
             </div>
           </div>
+          <div class="col-md-8">
+            <div class="mt-5">
+              <div class="shadow rounded-3">
+                <p class="fs-5 p-4 mb-0"><b> Latest Sales</b> 
+                  <span style="float: right;" class="text-primary">
+                    <span class="mx-2 fs-6 fw-normal">Last 7 day</span><button mat-button [matMenuTriggerFor]="menu" class="fs-6"><mat-icon>unfold_more</mat-icon></button>
+                    <mat-menu #menu="matMenu">
+                      <button mat-menu-item>Item 1</button>
+                      <button mat-menu-item>Item 2 </button>
+                    </mat-menu> 
+                  </span>
+                </p>
+                <hr class="mb-0">
+                <div>
+                  <div>
+                    <div class="p-4">
+                      <div>
+                        <!--The content below is only a placeholder and can be replaced.-->
+                        <apx-chart [series]="chartSeries" [chart]="chartDetails"></apx-chart>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <div class="col-md-4" style="height: 100%;">
+            <div class="mt-5">
+              <div class="shadow rounded-3">
+                <div>
+                  <p class="fs-5 p-4"><b> Apex Pie Chart  </b> </p>
+                  <hr class="mb-0">
+                </div>
+                <div class="pt-4 pb-4 px-2">
+                  <div>
+                     <!--The content below is only a placeholder and can be replaced.-->
+                     <apx-chart [series]="chartSeries" [chart]="chartDetails"></apx-chart>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
         </div>
       </div>
     </mat-drawer-content>

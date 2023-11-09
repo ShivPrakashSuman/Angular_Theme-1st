@@ -7,6 +7,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent {
+
   sideBarOpne = true;
   search:any;
   sideBarToggler(){

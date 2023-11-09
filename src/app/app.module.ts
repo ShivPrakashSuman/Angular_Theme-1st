@@ -29,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { NgApexchartsModule } from "ng-apexcharts";
 //  ---
 import { AppRoutingModule } from './app-routing.module';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
@@ -89,7 +90,8 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     MatInputModule,
     MatRadioModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    NgApexchartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

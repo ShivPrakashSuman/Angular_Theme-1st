@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'chart.js/auto';
+import { ApexChart, ApexNonAxisChartSeries } from 'ng-apexcharts';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +12,20 @@ export class DashboardComponent {
   toggleVal: boolean = false;
   sideBarOpne = true;
 
-  sideBarToggler(){
+  sideBarToggler() {
     this.sideBarOpne = !this.sideBarOpne;
   }
+
+  // Apex Chart ---
+  chartSeries: ApexNonAxisChartSeries = [40, 32, 25, 55]
+  chartDetails: ApexChart = {
+    type: 'pie',
+    toolbar: {
+      show: true
+    }
+  }
+
+  // Apex Chart end -- 
 
   ngOnInit() {
     const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August'];
@@ -56,7 +68,7 @@ export class DashboardComponent {
       },
     });
 
-    const cricleChart= {
+    const cricleChart = {
       labels: ['Red', 'Blue', 'Yellow'],
       datasets: [{
         label: 'My First Dataset',

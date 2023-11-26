@@ -43,7 +43,9 @@ import { CustomersFormComponent } from './pages/customers-form/customers-form.co
 import { AccountComponent } from './pages/account/account.component';
 import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
-
+import { NestableExComponent } from './pages/nestable-ex/nestable-ex.component';
+import { StepperComponent } from './pages/stepper/stepper.component';
+import { ApexChart1Component } from './pages/dashboard/apex-chart1/apex-chart1.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,6 +60,9 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     AccountComponent,
     LoginComponent,
     RegisterComponent,
+    NestableExComponent,
+    StepperComponent,
+    ApexChart1Component,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +96,8 @@ import { RegisterComponent } from './pages/auth/register/register.component';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    NgApexchartsModule
+    NgApexchartsModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -35,6 +35,7 @@
     "jquery-ui": "^1.13.2",
     "ng-angular-popup": "^0.4.7",
     "ng-apexcharts": "^1.8.0",
+    "ngx-bootstrap": "^11.0.2",
     "ngx-infinite-scroll": "^16.0.0",
     "ngx-skeleton-loader": "^8.0.0",
     "rxjs": "~7.8.0",

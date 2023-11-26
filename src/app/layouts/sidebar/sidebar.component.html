@@ -41,6 +41,11 @@
                 <mat-icon> local_mall</mat-icon><span class="mx-2">Products</span>
             </mat-list-item>
         </a>
+        <a routerLink="/nestable">
+            <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.active]="getActive('nestable')">
+                <mat-icon> local_mall</mat-icon><span class="mx-2">Nestable</span>
+            </mat-list-item>
+        </a>
         <a routerLink="/pexels">
             <mat-list-item role="listitem" class=" rounded-3 list-bar" [class.active]="getActive('pexels')">
                 <mat-icon> wallpaper</mat-icon><span class="mx-2">Pexels</span>

@@ -8,6 +8,7 @@ import { CustomersFormComponent } from './pages/customers-form/customers-form.co
 import { AccountComponent } from './pages/account/account.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { LoginComponent } from './pages/auth/login/login.component';
+import { NestableExComponent } from './pages/nestable-ex/nestable-ex.component';
 
 const appRoutes: Routes = [
   { path: '', component: DashboardComponent },
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'customers', component:  CustomersComponent},
   { path: 'customers/create', component:  CustomersFormComponent},
   { path: 'products', component: ProductComponent },
+  { path: 'nestable', component: NestableExComponent },
   { path: 'pexels', component: PexelsComponent },
   { path: 'account', component: AccountComponent }
 ];

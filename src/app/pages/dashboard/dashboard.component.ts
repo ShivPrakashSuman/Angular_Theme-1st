@@ -20,6 +20,7 @@ export class DashboardComponent {
   chartSeries: ApexNonAxisChartSeries = [40, 32, 25, 55]
   chartDetails: ApexChart = {
     type: 'pie',
+    width:500,
     toolbar: {
       show: true
     }

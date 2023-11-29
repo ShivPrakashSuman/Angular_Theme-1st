@@ -45,7 +45,8 @@ import { LoginComponent } from './pages/auth/login/login.component';
 import { RegisterComponent } from './pages/auth/register/register.component';
 import { NestableExComponent } from './pages/nestable-ex/nestable-ex.component';
 import { StepperComponent } from './pages/stepper/stepper.component';
-import { ApexChart1Component } from './pages/dashboard/apex-chart1/apex-chart1.component';
+import { BarChartComponent } from './element/bar-chart/bar-chart.component';
+import { PieChartComponent } from './element/pie-chart/pie-chart.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -62,7 +63,8 @@ import { ApexChart1Component } from './pages/dashboard/apex-chart1/apex-chart1.c
     RegisterComponent,
     NestableExComponent,
     StepperComponent,
-    ApexChart1Component,
+    BarChartComponent,
+    PieChartComponent,
   ],
   imports: [
     BrowserModule,

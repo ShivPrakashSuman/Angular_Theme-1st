@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { auto } from '@popperjs/core';
 import { Chart } from 'chart.js/auto';
 import { ApexChart, ApexNonAxisChartSeries } from 'ng-apexcharts';
 
@@ -8,6 +9,21 @@ import { ApexChart, ApexNonAxisChartSeries } from 'ng-apexcharts';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+
+  chart_data = [
+    {
+      name: "distibuted",
+      data: [21, 22, 10, 28, 16, 21, 13, 30],
+      colors: ["#008FFB","#00E396","#FEB019","#FF4560","#775DD0","#546E7A","#26a69a","#D10CE8"],
+    },
+    {
+      name: "my Custom",
+      data: [25, 22, 10, 28, 16, 21, 13, 30],
+      colors: ["#008FFB","#00E396","#FEB019","#FF4560","#775DD0","#546E7A","#26a69a","#D10CE8"],
+    }
+  ]
+
+
 
   toggleVal: boolean = false;
   sideBarOpne = true;

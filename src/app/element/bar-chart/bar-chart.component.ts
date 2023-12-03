@@ -20,6 +20,7 @@ export class BarChartComponent {
     for (var item of  this.getData.colors) {
       this.colors.push(item);
     }
+    //console.log('click', this.colors)
   }
 
   series: ApexAxisChartSeries = [
@@ -66,16 +67,7 @@ export class BarChartComponent {
     ],
     labels: {
       style: {
-        colors: [
-          "#008FFB",
-          "#00E396",
-          "#FEB019",
-          "#FF4560",
-          "#775DD0",
-          "#546E7A",
-          "#26a69a",
-          "#D10CE8"
-        ],
+        colors: this.colors ,
         fontSize: "12px"
       }
     }

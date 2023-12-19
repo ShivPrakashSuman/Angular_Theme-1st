@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import {
   ApexNonAxisChartSeries,
   ApexPlotOptions,
@@ -26,65 +26,23 @@ export type ChartOptions = {
 })
 export class PieChartComponent {
 
+  @Input() chart_item: any = '';
   options: any = '';
+  all_data: any = '';
   
   ngOnInit() {
+    this.all_data = this.chart_item[0];
     const chartOptions: Partial<ChartOptions> = {
-      series: [76, 67, 61, 90],
-      chart: {
-        height: 390,
-        type: "radialBar"
-      },
-      plotOptions: {
-        radialBar: {
-          offsetY: 0,
-          startAngle: 0,
-          endAngle: 270,
-          hollow: {
-            margin: 5,
-            size: "30%",
-            background: "transparent",
-            image: undefined
-          },
-          dataLabels: {
-            name: {
-              show: false
-            },
-            value: {
-              show: false
-            }
-          }
-        }
-      },
-      colors: ["#1ab7ea", "#0084ff", "#39539E", "#0077B5"],
-      labels: ["Vimeo", "Messenger", "Facebook", "LinkedIn"],
-      legend: {
-        show: true,
-        floating: true,
-        fontSize: "16px",
-        position: "left",
-        offsetX: 50,
-        offsetY: 10,
-        labels: {
-          useSeriesColors: true
-        },
-        formatter: function (seriesName, opts) {
-          return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
-        },
-        itemMargin: {
-          horizontal: 3
-        }
-      },
-      responsive: [
-        {
-          breakpoint: 480,
-          options: {
-            legend: {
-              show: false
-            }
-          }
-        }
-      ]
+      
+      series: this.all_data.series,
+      chart: this.all_data.chart,
+      plotOptions: this.all_data.plotOptions,
+
+      colors: this.all_data.colors,
+      labels: this.all_data.labels,
+      legend: this.all_data.legend,
+
+      responsive: this.all_data.responsive
     };
     this.options = chartOptions;
   }

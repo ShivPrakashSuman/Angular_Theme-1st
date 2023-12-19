@@ -10,21 +10,126 @@ import { ApexChart, ApexNonAxisChartSeries } from 'ng-apexcharts';
 })
 export class DashboardComponent {
 
+  bar_chart_options = [
+    {
+      series: {
+        name: "my Custom",
+        data: [25, 22, 10, 28, 16, 21, 13, 30]
+      },
+      chart: {
+        height: '350',
+        type: "bar",
+        // events: {
+        //   click: function (chart: any, w: any, e: any) {
+        //     // console.log(chart, w, e)
+        //   }
+        // }
+      },
+      xaxis: {
+        categories: [
+          ["John", "Doe"],
+          ["Joe", "Smith"],
+          ["Jake", "Williams"],
+          "Amber",
+          ["Peter", "Brown"],
+          ["Mary", "Evans"],
+          ["David", "Wilson"],
+          ["Lily", "Roberts"]
+        ],
+        labels: {
+          style: {
+            colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#546E7A", "#26a69a", "#D10CE8"],
+            fontSize: "12px"
+          }
+        }
+      }
+    }
+  ];
+
   chart_data = [
     {
       name: "distibuted",
       data: [21, 22, 10, 28, 16, 21, 13, 30],
-      colors: ["#008FFB","#00E396","#FEB019","#FF4560","#775DD0","#546E7A","#26a69a","#D10CE8"],
+      colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#546E7A", "#26a69a", "#D10CE8"],
     },
     {
       name: "my Custom",
       data: [25, 22, 10, 28, 16, 21, 13, 30],
-      colors: ["#008FFB","#00E396","#FEB019","#FF4560","#775DD0","#546E7A","#26a69a","#D10CE8"],
+      colors: ["#008FFB", "#00E396", "#FEB019", "#FF4560", "#775DD0", "#546E7A", "#26a69a", "#D10CE8"],
+    }
+  ]
+  chart_options = [
+    {
+      series: [76, 67, 61, 90],
+      chart: {
+        height: 390,
+        type: "radialBar"
+      },
+      colors: ["#1ab7ea", "#0084ff", "#39539E", "#0077B5"],
+      labels: ["Vimeo", "Messenger", "Facebook", "LinkedIn"],
+      plotOptions: {
+        radialBar: {
+          offsetY: 0,
+          startAngle: 0,
+          endAngle: 270,
+          hollow: {
+            margin: 5,
+            size: "30%",
+            background: "transparent",
+            image: undefined
+          },
+          dataLabels: {
+            name: {
+              show: false
+            },
+            value: {
+              show: false
+            }
+          }
+        }
+      },
+      legend: {
+        show: true,
+        floating: true,
+        fontSize: "16px",
+        position: "left",
+        offsetX: 50,
+        offsetY: 10,
+        labels: {
+          useSeriesColors: true
+        },
+        formatter: function (seriesName: any, opts: any) {
+          return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex];
+        },
+        itemMargin: {
+          horizontal: 3
+        }
+      },
+      responsive: [
+        {
+          breakpoint: 480,
+          options: {
+            legend: {
+              show: false
+            }
+          }
+        }
+      ]
     }
   ]
 
-
-
+  pie_chart_options = [{
+    series: [40, 32, 25, 55],
+    chart: {
+      type: 'pie',
+      width: 500,
+      toolbar: {
+        show: true
+      }
+    },
+    colors: ["#1ab8ea", "#0002ff", "#39552E", "#0099B5"]
+  }
+  ]
   toggleVal: boolean = false;
   sideBarOpne = true;
 
@@ -36,7 +141,7 @@ export class DashboardComponent {
   chartSeries: ApexNonAxisChartSeries = [40, 32, 25, 55]
   chartDetails: ApexChart = {
     type: 'pie',
-    width:500,
+    width: 500,
     toolbar: {
       show: true
     }
